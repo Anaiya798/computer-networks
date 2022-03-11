@@ -1,0 +1,18 @@
+Start: 1647035133.9329095
+
+The server's response was:
+ HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Hello, buddy!</h1>
+</body>
+</html>
+
+End: 1647035202.8413353
