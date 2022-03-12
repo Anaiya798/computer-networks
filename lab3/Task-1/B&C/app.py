@@ -12,7 +12,6 @@ def start_my_server():
             client_socket, address = server.accept()
             new_thread = Thread(target=on_new_client, args=(client_socket, address))
             new_thread.start()
-            new_thread.join()
 
     except KeyboardInterrupt:
         print(f'Gracefully shutting down the server')
