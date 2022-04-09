@@ -1,5 +1,6 @@
 import socket
-import random
+import time
+from random import uniform
 
 
 def start_my_server():
@@ -9,9 +10,11 @@ def start_my_server():
         print('Server running...')
         while True:
             data, addr = server.recvfrom(1024)
-            if random.uniform(0, 1) > 0.8:
+            pause = uniform(0, 1)
+            if pause > 0.8:
                 continue
             else:
+                time.sleep(pause)  # случайная задержка, чтобы RTT не было везде 0
                 server.sendto(data.decode('utf-8').upper().encode('utf-8'), addr)
 
     except KeyboardInterrupt:
