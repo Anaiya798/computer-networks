@@ -16,6 +16,7 @@ def read_file(filename, chunk_size):
             print(f'Unknown exception while reading from {filename}')
         finally:
             file.close()
+        pkgs.append('END'.encode('utf-8'))
         return pkgs
     except FileNotFoundError:
         print('No such file or directory')

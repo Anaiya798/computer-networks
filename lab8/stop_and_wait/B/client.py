@@ -55,8 +55,7 @@ def client(pkgs, timeout):
             msg = header_number.encode('utf-8') + pkgs[i]
             client.sendto(msg, ('127.0.0.1', 2000))
             try:
-                data, addr = client.recvfrom(1024)
-                data = data.decode('utf-8')
+                data = client.recvfrom(1024)[0].decode('utf-8')
 
                 if data[:5] != 'PKG_0' and data[:5] != 'PKG_1' and 'CONTENT SIZE' not in data:
                     raise Exception
@@ -75,8 +74,7 @@ def client(pkgs, timeout):
                 msg = header_number.encode('utf-8') + pkgs[i]
                 client.sendto(msg, ('127.0.0.1', 2000))
                 try:
-                    data, addr = client.recvfrom(1024)
-                    data = data.decode('utf-8')
+                    data = client.recvfrom(1024)[0].decode('utf-8')
 
                     if data[:5] != 'PKG_0' and data[:5] != 'PKG_1' and 'CONTENT SIZE' not in data:
                         raise Exception
