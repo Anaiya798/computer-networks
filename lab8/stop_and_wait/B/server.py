@@ -1,28 +1,11 @@
 import socket
-from random import uniform
 from datetime import datetime
+from random import uniform
+from shared_functions import read_file
+
 
 ACK = 'The server received your package'
 CHUNK_SIZE = 100
-
-
-def read_file(filename):
-    try:
-        file = open(filename, "rb")
-        pkgs = []
-        try:
-            bytes_read = file.read(CHUNK_SIZE)
-            pkgs.append(bytes_read)
-            while bytes_read:
-                bytes_read = file.read(CHUNK_SIZE)
-                pkgs.append(bytes_read)
-        except Exception:
-            print(f'Unknown exception while reading from {filename}')
-        finally:
-            file.close()
-        return pkgs
-    except FileNotFoundError:
-        print(f'No such file or directory {filename}')
 
 
 def send_file(server, addr, pkgs):
@@ -70,10 +53,10 @@ def server():
                 continue
             else:
                 if data[7:] == 'statistics':
-                    pkgs = read_file('statistics.txt')
+                    pkgs = read_file('statistics.txt', CHUNK_SIZE)
                     content_size = len(pkgs)
 
-                ack_msg = data[:5] + ' ' + ACK + '\nCONTENT SIZE: ' + str(content_size)
+                ack_msg = data[:5] + '\n' + ACK + '\nCONTENT SIZE: ' + str(content_size)
                 server.sendto(ack_msg.encode('utf-8'), addr)
 
                 if content_size > 0:

@@ -1,30 +1,43 @@
 ====
-2022-04-16 17:35:27.659455
+2022-04-17 00:36:07.583875
 Received 107 bytes
 Decoded data: PKG_0
-The rabbit-hole went str
-to think about stopping herself before she found
-herself falling
+The rabbit-hole went straight on like a
+tunnel for some way, and then dipped suddenly
+down, so sud
 ====
 
 
 ====
-2022-04-16 17:
-Either the well was very deep, or she fell
-very slowly,
-====
-
-
-====
-2022-04-16 17:35:28.665586
+2022-04-17 00:36:08.583928
 Received 107 bytes
 Decoded data: PKG_1
- for she had plenty of time as she
-went down to looved 107 bytes
-Decoded data: PKG_0
-ppen next. First, she tried
-to look down and make out what shtes
-Decoded data: PKG_0
-to see anything :
-then she looked at the sides of the well, and
-notic
+denly that Alice had not a momentwn to look about her, and to wonder
+what was going to ha
+====
+
+
+====
+2022-04-17 00:36:08.5839t what she was
+coming to, but it was too dark 
+====
+
+
+====
+2022-04-17 00:36:09.595261
+Received 93 bytes
+Decoded data: PKG_1
+ cupboards
+and bookshelves: here and there she saw maps
+and pictures hung upon pegs.
+====
+
+
+====
+2022-04-17 00:36:09.595261
+Received 7 bytes
+Decoded data:
+====
+
+
+END
