@@ -10,7 +10,6 @@ def server():
     print('Server running...')
     try:
         while True:
-            pkgs = []
             acc_files_counter = 1
 
             data, addr = server.recvfrom(1024)
@@ -24,7 +23,7 @@ def server():
                 continue
             else:
 
-                ack_msg = data[:5] + ' ' + ACK
+                ack_msg = data[:5] + '\n' + ACK
                 server.sendto(ack_msg.encode('utf-8'), addr)
 
                 if data[7:] == 'END':

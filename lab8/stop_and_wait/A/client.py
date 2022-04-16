@@ -22,6 +22,17 @@ def read_file(filename, chunk_size):
         print('No such file or directory')
 
 
+def get_answer(client):
+    data = client.recvfrom(1024)[0].decode('utf-8')
+
+    if data[:5] != 'PKG_0' and data[:5] != 'PKG_1' not in data:
+        raise Exception
+
+    print(data)
+    print('====')
+    print()
+
+
 def client(pkgs, timeout):
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     client.connect(('127.0.0.1', 2000))
@@ -40,21 +51,14 @@ def client(pkgs, timeout):
             msg = header_number.encode('utf-8') + pkgs[i]
             client.sendto(msg, ('127.0.0.1', 2000))
             try:
-                data = client.recvfrom(1024)[0].decode('utf-8')
-                print(data, i)
-                print('====')
-                print()
-
+                get_answer(client)
             except Exception:
                 print('Request timed out. Sending one more time...')
                 header_number = 'PKG_1\r\n'
                 msg = header_number.encode('utf-8') + pkgs[i]
                 client.sendto(msg, ('127.0.0.1', 2000))
                 try:
-                    data = client.recvfrom(1024)[0].decode('utf-8')
-                    print(data, i)
-                    print('====')
-                    print()
+                    get_answer(client)
                 except Exception:
                     print('Request timed out. Package was lost on server!')
                     print('====')
