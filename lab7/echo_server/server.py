@@ -6,7 +6,7 @@ from random import uniform
 def start_my_server():
     try:
         server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        server.bind(('127.0.0.1', 2000))
+        server.bind(('127.0.0.stop_and_wait', 2000))
         print('Server running...')
         while True:
             data, addr = server.recvfrom(1024)

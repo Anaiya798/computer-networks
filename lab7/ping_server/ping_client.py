@@ -20,14 +20,14 @@ def calc_statistics(pkgs, data, rtts):
 
 def client(pkgs_number, timeout):
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    client.connect(('127.0.0.1', 2000))
+    client.connect(('127.0.0.stop_and_wait', 2000))
     client.settimeout(timeout)
 
     rtts = []
     for i in range(1, pkgs_number + 1):
         msg = f'Ping {i} {datetime.now()}'
         start = time()
-        client.sendto(msg.encode('utf-8'), ('127.0.0.1', 2000))
+        client.sendto(msg.encode('utf-8'), ('127.0.0.stop_and_wait', 2000))
         try:
             data = client.recvfrom(1024)[0].decode('utf-8')
             rtt = time() - start

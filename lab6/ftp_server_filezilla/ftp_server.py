@@ -12,7 +12,7 @@ def run_server():
     handler.authorizer = authorizer
     handler.banner = "pyftpdlib based ftpd ready."
 
-    address = ('127.0.0.1', 23)
+    address = ('127.0.0.stop_and_wait', 23)
     server = FTPServer(address, handler)
     
     server.max_cons = 256

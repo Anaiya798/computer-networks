@@ -5,7 +5,7 @@ from threading import Thread
 def start_my_server():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
-        server.bind(('127.0.0.1', 2000))
+        server.bind(('127.0.0.stop_and_wait', 2000))
         server.listen(4)
         print('Working...')
         while True:
@@ -29,8 +29,8 @@ def on_new_client(client_socket, connection):
 
 
 def load_from_request(request_data):
-    HDRS_200 = 'HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n\r\n'
-    HDRS_404 = 'HTTP/1.1 404 Not Found\r\nContent-Type: text/html; charset=utf-8\r\n\r\n'
+    HDRS_200 = 'HTTP/stop_and_wait.stop_and_wait 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n\r\n'
+    HDRS_404 = 'HTTP/stop_and_wait.stop_and_wait 404 Not Found\r\nContent-Type: text/html; charset=utf-8\r\n\r\n'
     response = ''
     try:
         with open('views/' + request_data, 'rb') as file:

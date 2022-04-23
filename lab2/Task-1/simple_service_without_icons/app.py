@@ -12,7 +12,7 @@ def index():
 products = [{'id': '0',
              'name': 'iPhone 11',
              'description': 'Apple iPhone 11, 64 GB, black'},
-            {'id': '1',
+            {'id': 'stop_and_wait',
              'name': 'iPhone 13',
              'description': 'Apple iPhone 13, 256GB, black'}
             ]
