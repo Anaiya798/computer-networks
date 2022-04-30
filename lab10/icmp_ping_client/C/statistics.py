@@ -1,0 +1,10 @@
+def calc_statistics(pkgs, rtts):
+    rtts_length = len(rtts)
+    print('Statistics:')
+    print(f'{pkgs} packages were transmitted, {rtts_length} answers were receieved')
+    print(f'Package loss: {round((1 - rtts_length / pkgs) * 100, 4)} %')
+    print(f'Min RTT: {round(min(rtts) * 1000, 4)} ms')
+    print(f'Max RTT: {round(max(rtts) * 1000, 4)} ms')
+    print(f'Average RTT: {round(sum(rtts) / rtts_length * 1000, 4)}')
+    print('=========')
+    print()
