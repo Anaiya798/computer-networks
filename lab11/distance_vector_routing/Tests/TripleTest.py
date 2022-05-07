@@ -1,15 +1,5 @@
-'''
-Created on Oct 27, 2015
-
-@author: Avery
-'''
-import unittest
-import Triple
-
 
 class TestTriple(unittest.TestCase):
-
-
     def test_create(self):
         triple1 = Triple.Triple('C', 1.2, 'B')
         self.assertEqual('C', triple1.dest)
@@ -26,5 +16,4 @@ class TestTriple(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    #import sys;sys.argv = ['', 'Test.test_create']
     unittest.main()
