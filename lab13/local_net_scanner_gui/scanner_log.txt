@@ -1,0 +1,6 @@
+IP Address		MAC Address			Host name
+Home:
+10.0.0.100		ac-7d-eb-a7-7d-3e		DESKTOP-JMOLMJK
+
+Local network:
+10.0.0.1		00:d1:e6:e6:e6:e6		-
