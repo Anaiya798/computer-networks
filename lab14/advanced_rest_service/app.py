@@ -89,8 +89,10 @@ def login_page(token):
     login = request.form.get('e-mail')
     password = request.form.get('password')
     if request.method == 'POST':
-        if login not in users.keys() or password not in users.values():
+        if login not in users.keys():
             flash('User does not exist!')
+        elif password != users[login]:
+            flash('Incorrect password!')
         else:
             token = generate_token()
             flash(f'Successful! Your personal access token: {token}')
@@ -117,7 +119,6 @@ def register(token):
         else:
             flash('Successful!')
             users[login] = password
-        print(users)
     return render_template('register.html')
 
 
