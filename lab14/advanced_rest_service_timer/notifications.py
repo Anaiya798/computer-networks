@@ -1,8 +1,10 @@
 import smtplib
 from email.message import EmailMessage
 
-SENDER_ADDRESS = 'persikk3000@gmail.com'
-PASSWORD = 'burningheartA2020'
+with open('security.txt') as f:
+    SENDER_ADDRESS = f.readline().strip()
+    PASSWORD = f.readline().strip()
+
 TEXT = 'Рады видеть Вас в нашем сервисе вновь!'
 
 
